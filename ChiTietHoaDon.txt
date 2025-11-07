@@ -1,0 +1,40 @@
+HD001;TA001;Banh mi thit;2;15000.0
+HD001;TU001;Ca phe den da;1;25000.0
+HD002;TA002;Pho bo;1;40000.0
+HD002;TU002;Ca phe sua da;2;28000.0
+HD003;TA003;Com tam suon bi;1;45000.0
+HD003;TU003;Tra dao cam sa;1;35000.0
+HD004;TA004;Bun cha Ha Noi;2;35000.0
+HD004;TU004;Tra sua tran chau;1;40000.0
+HD005;TA005;Mi xao bo;1;42000.0
+HD005;TU005;Nuoc cam tuoi;1;30000.0
+HD006;TA006;Chao ga;3;30000.0
+HD006;TU006;Sinh to bo;1;35000.0
+HD007;TA007;Banh bao nhan thit;2;12000.0
+HD007;TU007;Nuoc suoi Aquafina;1;10000.0
+HD008;TA008;Xoi ga;1;25000.0
+HD008;TU009;Coca Cola lon;2;15000.0
+HD009;TA009;Ga ran phan nho;1;50000.0
+HD009;TU010;Bia Heineken;2;25000.0
+HD010;TA010;Khoai tay chien;2;20000.0
+HD010;TU004;Tra sua tran chau;1;40000.0
+HD011;TA001;Banh mi thit;3;15000.0
+HD011;TU001;Ca phe den da;2;25000.0
+HD012;TA002;Pho bo;1;40000.0
+HD012;TU002;Ca phe sua da;1;28000.0
+HD013;TA003;Com tam suon bi;2;45000.0
+HD013;TU003;Tra dao cam sa;1;35000.0
+HD014;TA004;Bun cha Ha Noi;1;35000.0
+HD014;TU005;Nuoc cam tuoi;1;30000.0
+HD015;TA005;Mi xao bo;1;42000.0
+HD015;TU006;Sinh to bo;1;35000.0
+HD016;TA006;Chao ga;2;30000.0
+HD016;TU007;Nuoc suoi Aquafina;1;10000.0
+HD017;TA007;Banh bao nhan thit;3;12000.0
+HD017;TU009;Coca Cola lon;2;15000.0
+HD018;TA008;Xoi ga;2;25000.0
+HD018;TU010;Bia Heineken;1;25000.0
+HD019;TA009;Ga ran phan nho;1;50000.0
+HD019;TU004;Tra sua tran chau;1;40000.0
+HD020;TA010;Khoai tay chien;3;20000.0
+HD020;TU002;Ca phe sua da;1;28000.0

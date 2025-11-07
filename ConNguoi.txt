@@ -1,0 +1,23 @@
+NV01;Nguyen Van A;Nam;0901111111;Ha Noi;NV
+NV02;Tran Thi B;Nu;0902222222;Hai Phong;NV
+NV03;Le Van C;Nam;0903333333;Da Nang;NV
+NV04;Pham Thi D;Nu;0904444444;Hue;QL
+NV06;Nguyen Thi F;Nu;0906666666;Ha Noi;QL
+NV07;Vu Van G;Nam;0907777777;Hai Duong;NV
+NV08;Do Thi H;Nu;0908888888;Quang Ninh;NV
+NV09;Dang Van I;Nam;0909999999;Thanh Hoa;NV
+NV10;Luong bao han;Nu;0910000000;Nam Dinh;NV
+KH01;Nguyen Van An;Nam;0987123456;12 Nguyen Trai, Ha Noi
+KH02;Tran Thi Binh;Nu;0912345678;45 Le Loi, Da Nang
+KH03;Le Minh Tuan;Nam;0978567890;78 Cach Mang Thang 8, TP HCM
+KH04;Pham Thu Hang;Nu;0905123987;23 Tran Phu, Hai Phong
+KH06;Hoang Thi Lan;Nu;0988345671;34 Ly Thuong Kiet, Ha Noi
+KH07;Vu Duc Manh;Nam;0909998877;89 Hai Ba Trung, Hue
+KH08;Ngo Thi Huong;Nu;0912555666;22 Nguyen Dinh Chieu, TP HCM
+KH09;Trinh Quang Huy;Nam;0981777333;67 Le Duan, Da Nang
+KH10;Phan Thi Mai;Nu;0974666777;11 Phan Chu Trinh, Nha Trang
+KH012;dong;nam;098813183;tp KH
+KH011;DZ;NAM;0929019201;HN
+NV011;DZ;NAM;992090210;KH;NV
+KH013;DEPZAI09;NAM;091201201;TP HCM
+NV99;DZZZZZ;NAM;0920921;TP HCM;QL
