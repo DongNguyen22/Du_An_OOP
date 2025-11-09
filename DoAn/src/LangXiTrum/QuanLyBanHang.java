@@ -1,6 +1,8 @@
 package LangXiTrum;
 
+import java.lang.classfile.Label;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class QuanLyBanHang {
@@ -185,7 +187,17 @@ public class QuanLyBanHang {
         System.out.print("Nhap ma san pham can tim: ");
         String maSP = sc.nextLine();
         SanPham sp = dSachSanPham.timSPtheoMaSp(maSP);
-        if (sp != null) System.out.println("==> Tim thay san pham: " + sp);
+        if (sp != null){
+             System.out.println("==> Tim thay san pham: ");
+             if (sp instanceof ThucAn){
+                dSachSanPham.inTieuDeTA();
+             }
+             else if(sp instanceof ThucUong)
+             {
+                dSachSanPham.inTieuDeTU();
+             }
+            System.out.println(sp);
+        }
         else System.out.println("Khong tim thay san pham co ma: " + maSP);
     }
     // ===================== MENU CON Hóa Đơn =====================
@@ -488,27 +500,33 @@ public class QuanLyBanHang {
 }
    public void thongke(String keys, int nam) {
     // key = {SanPham,NhanVien,KhachHang}
-    String[] labels = new String[100];
+    String[] labels = new String[0];
     int sizeLabel = 0;
-    int Loai=0;
+    int Loai = 0;
     if(keys.equalsIgnoreCase("SanPham")){
         Loai =1;
         for (SanPham sp : dSachSanPham.getDs()) {
+            labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = sp.getMaSP();
     }
+    for(int i=0 ; i<labels.length;i++){
+        System.out.println(labels[i]);
     }
+}
     else if(keys.equalsIgnoreCase("NhanVien")){
         Loai =2;
         for (ConNguoi cn : dsConNguoi.getDs()) {
         if (cn instanceof NhanVien nv) {
+            labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = nv.getMaNV();
         }
     }
-    }
+}
     else if(keys.equalsIgnoreCase("KhachHang")){
         Loai =3;
         for (ConNguoi cn : dsConNguoi.getDs()) {
         if (cn instanceof KhachHang kh) {
+            labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = kh.getMaKH();
         }
     }

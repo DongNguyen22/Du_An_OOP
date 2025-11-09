@@ -146,7 +146,6 @@ public class DanhSachPhieuNhap {
                     dsPN[size++] =pn;
                 }
             }
-            System.out.println("Doc du lieu phieu nhap thanh cong!");
         } catch (IOException e) {
             System.out.println("Loi doc file  phieu nhap: " + e.getMessage());
         } catch (NullPointerException e) {

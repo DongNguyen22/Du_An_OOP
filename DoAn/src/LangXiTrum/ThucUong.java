@@ -33,8 +33,6 @@ public class ThucUong extends SanPham{
     
     @Override
     public void nhap(){
-        System.out.print("Nhap ma san pham: ");
-        this.maSP=sc.nextLine();
         System.out.print("nhap ma loai: ");
         this.maLoai=sc.nextLine();
         System.out.print("nhap ten san pham: ");

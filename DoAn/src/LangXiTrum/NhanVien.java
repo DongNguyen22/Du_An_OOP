@@ -38,7 +38,7 @@ public class NhanVien extends ConNguoi {
     }
     @Override
     public String toString() {
-    return String.format("| %-6s | %-20s | %-5s | %-10s | %-10s | %-20s | %10.2f VND |",
+    return String.format("| %-6s | %-20s | %-5s | %-10s | %-10s | %-20s | %10.2f      |",
             maNV, ten, gtinh, sdt, chucVu, diaChi, tinhLuong());
 }
 

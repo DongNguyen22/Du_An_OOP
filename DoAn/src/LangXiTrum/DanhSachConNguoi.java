@@ -236,7 +236,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
 }
     public static void inTieuDeNV() {
     System.out.println("+--------+----------------------+-------+------------+------------+----------------------+-----------------+");
-    System.out.println("| Ma NV  | Ten                  | GTinh | SDT        | Chuc Vu    | Dia Chi              | Luong           |");
+    System.out.println("| Ma NV  | Ten                  | GTinh | SDT        | Chuc Vu    | Dia Chi              | Luong(VND)      |");
     System.out.println("+--------+----------------------+-------+------------+------------+----------------------+-----------------+");
 }
 

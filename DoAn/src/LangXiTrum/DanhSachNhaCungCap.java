@@ -39,6 +39,7 @@ public class DanhSachNhaCungCap implements XuLiDuLieu {
         dsNCC = Arrays.copyOf(dsNCC, n+1);
         dsNCC[n]= new NhaCungCap();
         dsNCC[n++].nhap();
+        System.out.println("Them nha cung cap thanh cong");
     }
     @Override
     public void sua(String key) {

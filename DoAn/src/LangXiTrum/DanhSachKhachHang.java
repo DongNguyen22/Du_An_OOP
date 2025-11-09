@@ -44,6 +44,7 @@ public class DanhSachKhachHang implements XuLiDuLieu {
         dsKH = Arrays.copyOf(dsKH, n+1);
         dsKH[n] = new KhachHang();
         dsKH[n++].nhap();
+        System.out.println("Them khach hang thanh cong");
     }
     //sua
     @Override

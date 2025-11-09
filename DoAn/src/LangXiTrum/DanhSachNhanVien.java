@@ -42,6 +42,7 @@ public class DanhSachNhanVien implements XuLiDuLieu {
         dsNV = Arrays.copyOf(dsNV, n+1);
         dsNV[n] = new NhanVien();
         dsNV[n++].nhap();
+        System.out.println("Them vien thanh cong");
     }
     //sua
     @Override

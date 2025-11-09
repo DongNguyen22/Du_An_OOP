@@ -107,7 +107,7 @@ public class DanhSachSanPham implements XuLiDuLieu{
    @Override
    public void them() {
     System.out.println("1.Them Thuc An");
-    System.out.println("1.Them Thuc Uong");
+    System.out.println("2.Them Thuc Uong");
     int choice=sc.nextInt();
     sc.nextLine();
     if(choice == 1) themTA();
@@ -244,9 +244,17 @@ public class DanhSachSanPham implements XuLiDuLieu{
         ds = new ThucAn[0];
         n = 0;
     }
+    System.out.println("Nhap ma san pham: ");
+    String maSP = sc.nextLine();
+    if(timSPtheoMaSp(maSP) != null ){
+        System.out.println("Da ton tai san pham nay");
+        return;
+    }
     ds=Arrays.copyOf(ds, n+1);
     ds[n] = new ThucAn();
+        ds[n].setMaSP(maSP);
     ds[n++].nhap();
+    System.out.print("Them san pham thanh cong");
    }
    //them thuc Uong
    public void themTU(){
@@ -254,9 +262,17 @@ public class DanhSachSanPham implements XuLiDuLieu{
         ds = new ThucAn[0];
         n = 0;
     }
+    System.out.print("Nhap ma san pham: ");
+    String maSP = sc.nextLine();
+    if(timSPtheoMaSp(maSP) != null ){
+        System.out.println("Da ton tai san pham nay");
+        return;
+    }
     ds=Arrays.copyOf(ds, n+1);
     ds[n] = new ThucUong();
-    ds[n++].nhap();
+        ds[n].setMaSP(maSP);
+        ds[n++].nhap();
+    System.out.println("Them san pham thanh cong");
    }
    public SanPham[] getDs() {
     return ds;
