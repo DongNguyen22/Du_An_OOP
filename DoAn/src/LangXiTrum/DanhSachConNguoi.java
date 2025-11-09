@@ -91,15 +91,12 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     //tim kiem khach hang theo ma
     public KhachHang timKhMa(String key){
         for (ConNguoi cn : ds) {
-        if (cn instanceof KhachHang) {
-            KhachHang kh = (KhachHang) cn;
-            if (kh.getMaKH().equals(key)) {
-                return kh; 
-            }
+        if (cn instanceof KhachHang kh && kh.getMaKH().equalsIgnoreCase(key) ) {
+            return kh;
         }
     }
     return null; 
-    }
+}
     // Xoa thong tin  nhan vien
     public void xoaNV(String id) {
     for (int i = 0; i < n; i++) {
@@ -264,9 +261,6 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     public static void inKetBangKH() {
     System.out.println("+--------+----------------------+-------+------------+--------------------------------+");
 }
-    public ConNguoi[] getDs() {
-        return ds;
-    }
     @Override
     public void docFile() {
     try (BufferedReader br = new BufferedReader(
@@ -395,5 +389,8 @@ public class DanhSachConNguoi implements XuLiDuLieu {
         sc.nextLine();
         if(choice == 1) xoaNV(key);
         else if(choice == 2) xoaKH(key);
+    }
+    public ConNguoi[] getDs() {
+        return ds;
     }
 }

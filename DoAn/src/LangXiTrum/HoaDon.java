@@ -52,11 +52,11 @@ public class HoaDon {
         xuatTieuDeCTHD();
         dsCT.xuat();
         xuatKetBangCTHD();
-        System.out.println("Tong cong: "+ getTongTien() +" VND");
+        System.out.println("Tong cong: "+ getTongTien());
     }
     public static void xuatTieuDeCTHD() {
     System.out.println("+------------+------------+------------------------------+------------+-----------------+-----------------+");
-    System.out.println("| Ma HD      | Ma SP      | Ten San Pham                 | So Luong   | Don Gia         | Thanh Tien      |");
+    System.out.println("| Ma HD      | Ma SP      | Ten San Pham                 | So Luong   | Don Gia(VND)    | Thanh Tien(VND) |");
     System.out.println("+------------+------------+------------------------------+------------+-----------------+-----------------+");
 }
     public static void xuatKetBangCTHD() {

@@ -105,7 +105,7 @@ public class PhieuNhap {
 }
     public static void xuatTieuDeCTPN() {
     System.out.println("+------------+------------+------------+-----------------+-----------------+");
-    System.out.println("| Ma PN      | Ma SP      | So Luong   | Don Gia         | Thanh Tien      |");
+    System.out.println("| Ma PN      | Ma SP      | So Luong   | Don Gia(VND)    | Thanh Tien(VND) |");
     System.out.println("+------------+------------+------------+-----------------+-----------------+");
 }
     public static void xuatKetBangCTPN() {

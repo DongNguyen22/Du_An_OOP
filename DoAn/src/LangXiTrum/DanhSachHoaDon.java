@@ -164,7 +164,7 @@ public class DanhSachHoaDon{
                 }
             }
         }
-        System.out.println(" Ghi file HoaDon.txt và ChiTietHoaDon.txt thành công!");
+        System.out.println(" Ghi file HoaDon.txt và ChiTietHoaDon.txt thanh cong!");
     } catch (IOException e) {
         System.out.println("Lỗi ghi file: " + e.getMessage());
     }
@@ -180,6 +180,23 @@ public class DanhSachHoaDon{
         }
         return null;
     }
+    // tim kiem nang cao
+    public HoaDon[] timHDperMonth(int start , int end , int months , int years){
+        HoaDon[] ketqua = new HoaDon[0];
+        int size = 0;
+        for (HoaDon hoaDon : dsHD) {
+            if(hoaDon.getNgayLap() == null ) continue;
+            String[] parts = hoaDon.getNgayLap().split("-");
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int year = Integer.parseInt(parts[2]);
+            if( day >= start && day <= end && month == months && year == years){
+                ketqua = Arrays.copyOf(ketqua, size+1);
+                ketqua[size++] = hoaDon;
+            }
+        }
+        return ketqua;
+    }
     //tim hoa don theo ma nhan vien 
     public HoaDon[] timHDtheoNV(String maNV) {
     HoaDon[] ketQua = new HoaDon[0];
@@ -194,4 +211,5 @@ public class DanhSachHoaDon{
     public HoaDon[] getDsHD() {
         return dsHD;
     }
-    }
+
+}

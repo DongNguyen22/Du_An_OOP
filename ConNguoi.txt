@@ -1,23 +1,25 @@
-NV01;Nguyen Van A;Nam;0901111111;Ha Noi;NV
-NV02;Tran Thi B;Nu;0902222222;Hai Phong;NV
-NV03;Le Van C;Nam;0903333333;Da Nang;NV
-NV04;Pham Thi D;Nu;0904444444;Hue;QL
-NV06;Nguyen Thi F;Nu;0906666666;Ha Noi;QL
-NV07;Vu Van G;Nam;0907777777;Hai Duong;NV
-NV08;Do Thi H;Nu;0908888888;Quang Ninh;NV
-NV09;Dang Van I;Nam;0909999999;Thanh Hoa;NV
-NV10;Luong bao han;Nu;0910000000;Nam Dinh;NV
-KH01;Nguyen Van An;Nam;0987123456;12 Nguyen Trai, Ha Noi
-KH02;Tran Thi Binh;Nu;0912345678;45 Le Loi, Da Nang
-KH03;Le Minh Tuan;Nam;0978567890;78 Cach Mang Thang 8, TP HCM
-KH04;Pham Thu Hang;Nu;0905123987;23 Tran Phu, Hai Phong
-KH06;Hoang Thi Lan;Nu;0988345671;34 Ly Thuong Kiet, Ha Noi
-KH07;Vu Duc Manh;Nam;0909998877;89 Hai Ba Trung, Hue
-KH08;Ngo Thi Huong;Nu;0912555666;22 Nguyen Dinh Chieu, TP HCM
-KH09;Trinh Quang Huy;Nam;0981777333;67 Le Duan, Da Nang
-KH10;Phan Thi Mai;Nu;0974666777;11 Phan Chu Trinh, Nha Trang
-KH012;dong;nam;098813183;tp KH
-KH011;DZ;NAM;0929019201;HN
-NV011;DZ;NAM;992090210;KH;NV
-KH013;DEPZAI09;NAM;091201201;TP HCM
-NV99;DZZZZZ;NAM;0920921;TP HCM;QL
+NV001;Nguyen Van A;Nam;0901111111;Ha Noi;QL
+NV002;Tran Thi B;Nu;0902222222;Hai Phong;NV
+NV003;Le Van C;Nam;0903333333;Nam Dinh;NV
+NV004;Pham Thi D;Nu;0904444444;Ha Nam;NV
+NV005;Hoang Van E;Nam;0905555555;Ninh Binh;NV
+NV006;Nguyen Thi F;Nu;0906666666;Ha Noi;QL
+NV007;Vu Van G;Nam;0907777777;Hai Duong;NV
+NV008;Do Thi H;Nu;0908888888;Thai Binh;NV
+NV009;Bui Van I;Nam;0909999999;Hung Yen;NV
+NV010;Tran Thi J;Nu;0910000000;Bac Ninh;NV
+NV011;Pham Van K;Nam;0911111111;Hai Phong;NV
+NV012;Nguyen Thi L;Nu;0912222222;Ha Noi;NV
+KH001;Nguyen Van An;Nam;0987123456;12 Nguyen Trai, Ha Noi
+KH002;Tran Thi Binh;Nu;0912345678;45 Le Loi, Da Nang
+KH003;Le Van Cuong;Nam;0903123123;23 Tran Phu, Hai Phong
+KH004;Pham Thi Dung;Nu;0904234234;56 Nguyen Hue, Hue
+KH005;Hoang Van Em;Nam;0905345345;78 Truong Chinh, HCM
+KH006;Nguyen Thi Phuong;Nu;0906456456;11 Ly Thuong Kiet, Ha Noi
+KH007;Vu Van Giap;Nam;0907567567;9 Tran Hung Dao, Ninh Binh
+KH008;Do Thi Ha;Nu;0908678678;67 Cach Mang Thang 8, Can Tho
+KH009;Bui Van Hieu;Nam;0909789789;33 Hai Ba Trung, Hai Duong
+KH010;Tran Thi Huyen;Nu;0910890890;21 Nguyen Trai, Nam Dinh
+KH011;Pham Van Kien;Nam;0911901901;99 Le Thanh Tong, Quang Ninh
+KH012;Nguyen Thi Lan;Nu;0912012012;15 Dien Bien Phu, Hue
+

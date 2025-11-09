@@ -258,4 +258,7 @@ public class DanhSachSanPham implements XuLiDuLieu{
     ds[n] = new ThucUong();
     ds[n++].nhap();
    }
+   public SanPham[] getDs() {
+    return ds;
+   }
 }

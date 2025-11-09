@@ -144,7 +144,7 @@ public void xoa(String key) {
 
  //ghi file
  @Override
-public void ghiFile() {
+    public void ghiFile() {
     try (BufferedWriter bw = new BufferedWriter(
         new OutputStreamWriter(new FileOutputStream("NhanVien.txt", false), "UTF-8"))) {
 

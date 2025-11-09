@@ -26,44 +26,33 @@ public class QuanLyBanHang {
             System.out.println("║ 3. Quan ly phieu nhap & chi tiet  ║");
             System.out.println("║ 4. Quan ly khach hang             ║");
             System.out.println("║ 5. Quan ly nhan vien              ║");
+            System.out.println("║ 6. Thong Ke Hoa Don               ║");
             System.out.println("║ 0. Ket thuc chuong trinh          ║");
             System.out.println("╚═══════════════════════════════════╝");
             System.out.print("-> Moi ban chon: ");
             choice = sc.nextInt();
             sc.nextLine();
-
             switch (choice) {
-                case 1:
-                    menuSanPham();
-                    break;
-                case 2:
-                    menuHoaDon();
-                    break;
-                case 3:
-                    menuPhieuNhap();
-                    break;
-                case 4:
-                    menuKhachHang();
-                    break;
-                case 5:
-                    menuNhanVien();
-                    break;
-                case 6:
-                    thongKeTheoQuy(2025);
-                case 0:
+                case 1 -> menuSanPham();
+                case 2 -> menuHoaDon();
+                case 3 -> menuPhieuNhap();
+                case 4 -> menuKhachHang();
+                case 5 -> menuNhanVien();
+                case 6 -> menuThongKe();
+                case 0 -> {
                     dsConNguoi.ghiFile();
                     dSachSanPham.ghiFile();
                     dSachHoaDon.ghiFile();
                     dSachPhieuNhap.ghiFile();
                     System.out.println("-> Thoat chuong trinh. Tam biet!");
-                    break;
-                default:
+                }
+                default ->
                     System.out.println(" Lua chon khong hop le, vui long thu lai!");
             }
 
         } while (choice != 0);
     }
-    // ===================== MENU CON NHAN VIÊN =====================
+    // ===================== MENU CON NHAN VIEN =====================
     public void menuNhanVien() {
         int chon;
         do {
@@ -212,6 +201,7 @@ public class QuanLyBanHang {
         System.out.println("6. Tim hoa don theo ma nhan vien");
         System.out.println("7. Doc du lieu tu file");
         System.out.println("8. Ghi du lieu ra file");
+        System.out.println("9. Tim kiem nang cao");
         System.out.println("0. Thoat");
         System.out.print("Nhap lua chon: ");
         chon=sc.nextInt();
@@ -300,6 +290,33 @@ public class QuanLyBanHang {
             case 8:
                 dSachHoaDon.ghiFile();
                 break;
+            case 9:
+                System.out.print("Nhap nam cam tim: ");
+                int nam = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Nhap thang can tim: ");
+                int month = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Nhap ngay bat dau: ");
+                int start = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Nhap ngay ket thuc: ");
+                int end = sc.nextInt();
+                sc.nextLine();
+                if(end <= start ){
+                    System.out.println("Ngay nhap khong hop le, start:"+start + ">= end:"+end );
+                    break;
+                }
+                HoaDon[] kqTK = dSachHoaDon.timHDperMonth(start, end, month, nam);
+                if(kqTK.length == 0 ) {
+                    System.out.println("Khong co hoa don tim kiem ");
+                    break;
+                }
+                System.out.println("Danh sach hoa don tim duoc ");
+                for (HoaDon hoaDon : kqTK) {
+                    hoaDon.hienThi();
+                }
+                break;
             case 0:
                 System.out.println("Quay lai menu chinh");
                 break;
@@ -308,7 +325,7 @@ public class QuanLyBanHang {
         }
         System.out.println();
     } while (chon != 0);
-}   // ===================== MENU CON Phieu =====================
+}   // ===================== MENU Con Phieu Nhap =====================
     public void menuPhieuNhap() {
     int chon;
     do {
@@ -388,6 +405,44 @@ public class QuanLyBanHang {
         }
     } while (chon != 0);
 }
+    public void menuThongKe() {
+    int choice;
+    do{
+    System.out.println("0. Thoat thong ke");
+    System.out.println("1. Thong ke theo Quy trong 1 nam");
+    System.out.println("2. Thong ke theo phan loai");
+    System.out.print("Nhap lua chon: ");
+    choice = sc.nextInt();
+    sc.nextLine();
+
+    switch (choice) {
+        case 1 -> {
+            System.out.print("Nhap nam can thong ke: ");
+            int nam = sc.nextInt();
+            sc.nextLine();
+            thongKeTheoQuy(nam);
+        }
+        case 2 -> {
+            System.out.println("1. Thong ke theo San Pham");
+            System.out.println("2. Thong ke theo Nhan Vien");
+            System.out.println("3. Thong ke theo Khach Hang");
+            System.out.print("Nhap lua chon: ");
+            int lc = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Nhap nam can thong ke: ");
+            int nam = sc.nextInt();
+            sc.nextLine();
+            switch (lc) {
+                case 1 -> thongke("SanPham", nam);
+                case 2 -> thongke("NhanVien", nam);
+                case 3 -> thongke("KhachHang", nam);
+                default -> System.out.println("Lua chon khong hop le");
+            }
+        }
+        default -> System.out.println("Lua chon khong hop le");
+    }
+}    while(choice != 0);
+}
     public void thongKeTheoQuy(int nam) {
     double[] tongThu = new double[4];
     double[] tongChi = new double[4];
@@ -413,7 +468,6 @@ public class QuanLyBanHang {
             tongChi[quy]+=pn.getTongTien();
         }
     }
-    // ===== HIỂN THỊ KẾT QUẢ =====
     System.out.println("══════════════════════════════════════════════════════════════════");
     System.out.printf("   THONG KE TAI CHINH THEO QUY NAM %d\n", nam);
     System.out.println("══════════════════════════════════════════════════════════════════");
@@ -431,5 +485,90 @@ public class QuanLyBanHang {
     System.out.printf("%-8s | %-15.2f | %-15.2f | %-15.2f\n",
             "TONG", tongThuNam, tongChiNam, tongThuNam - tongChiNam);
     System.out.println("══════════════════════════════════════════════════════════════════");
+}
+   public void thongke(String keys, int nam) {
+    // key = {SanPham,NhanVien,KhachHang}
+    String[] labels = new String[100];
+    int sizeLabel = 0;
+    int Loai=0;
+    if(keys.equalsIgnoreCase("SanPham")){
+        Loai =1;
+        for (SanPham sp : dSachSanPham.getDs()) {
+            labels[sizeLabel++] = sp.getMaSP();
+    }
+    }
+    else if(keys.equalsIgnoreCase("NhanVien")){
+        Loai =2;
+        for (ConNguoi cn : dsConNguoi.getDs()) {
+        if (cn instanceof NhanVien nv) {
+            labels[sizeLabel++] = nv.getMaNV();
+        }
+    }
+    }
+    else if(keys.equalsIgnoreCase("KhachHang")){
+        Loai =3;
+        for (ConNguoi cn : dsConNguoi.getDs()) {
+        if (cn instanceof KhachHang kh) {
+            labels[sizeLabel++] = kh.getMaKH();
+        }
+    }
+}
+    double[][] Sum = new double[sizeLabel][4];
+    for (HoaDon hd : dSachHoaDon.getDsHD()) {
+        if (hd == null || hd.getNgayLap() == null) continue;
+        String[] parts = hd.getNgayLap().split("-");
+        if (parts.length < 3) continue;
+        int month = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+        if (year != nam) continue;
+        int quy = (month - 1) / 3;
+        int index=-1;
+        if(Loai == 1 ){
+            for(ChiTietHoaDon cthd : hd.getDSCTHD().getDsct())
+            {
+            index =timViTri(labels, sizeLabel,cthd.getMaSP());
+            Sum[index][quy] += cthd.getThanhTien();
+            }
+        }
+        if(Loai == 2 ){
+            index =timViTri(labels, sizeLabel,hd.getMaNV());
+            Sum[index][quy] += hd.getTongTien();
+        }
+        if(Loai == 3 ){
+            index =timViTri(labels, sizeLabel, hd.getMaKH());
+            Sum[index][quy] += hd.getTongTien();
+        }
+    }
+     String title = switch (Loai) {
+        case 1 -> "THONG KE DOANH THU THEO SAN PHAM";
+        case 2 -> "THONG KE DOANH THU THEO NHAN VIEN";
+        case 3 -> "THONG KE DOANH THU THEO KHACH HANG";
+        default -> "THONG KE DOANH THU";
+    };
+
+    System.out.println("════════════════════════════════════════════════════════════════════════════════════");
+    System.out.printf("%s NAM %d\n", title, nam);
+    System.out.println("════════════════════════════════════════════════════════════════════════════════════");
+
+    System.out.printf("%-10s | %-12s | %-12s | %-12s | %-12s | %-15s\n",
+            "Ma", "Quy 1 (VND)", "Quy 2 (VND)", "Quy 3 (VND)", "Quy 4 (VND)", "Tong Nam (VND)");
+    System.out.println("--------------------------------------------------------------------");
+
+    for (int i = 0; i < sizeLabel; i++) {
+        double tongNam = 0;
+        for (int q = 0; q < 4; q++) tongNam += Sum[i][q];
+        System.out.printf("%-10s | %-12.2f | %-12.2f | %-12.2f | %-12.2f | %-15.2f\n",
+                labels[i], Sum[i][0], Sum[i][1], Sum[i][2], Sum[i][3], tongNam);
+    }
+
+    System.out.println("════════════════════════════════════════════════════════════════════════════════════");
+}
+    private int timViTri(String[] labels, int sizeLabel, String key) {
+    for (int i = 0; i < sizeLabel; i++) {
+        if (labels[i].equalsIgnoreCase(key)) {
+            return i;
+        }
+    }
+    return -1;
 }
 }
