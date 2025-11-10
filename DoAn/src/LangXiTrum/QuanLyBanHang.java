@@ -388,7 +388,6 @@ public class QuanLyBanHang {
                         sc.nextLine();
                         sp.setSoLuong(chiTietPhieuNhap.getSoLuong()+sp.getSoLuong());
                         chiTietPhieuNhap.setMaSP(maSP);
-                        chiTietPhieuNhap.setMaPN(maPN);
                     }
                 }
                 dSachPhieuNhap.them(pn);
