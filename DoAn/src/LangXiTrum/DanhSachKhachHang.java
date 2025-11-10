@@ -21,14 +21,16 @@ public class DanhSachKhachHang implements XuLiDuLieu {
     //khoi tao tu ban phim
     @Override
     public void nhap(int n) {
-        System.out.println("=== Nhập danh sách khách hàng ===");
+        System.out.println("=== Nhap danh sach khach hang ===");
         this.n=n;
         dsKH = new KhachHang[n];
         for(int i=0 ; i<n ; i++){
             dsKH[i]=new KhachHang();
+            System.out.print("Nhap ma khach hang: ");
+            dsKH[i].setMaKH(sc.nextLine());
             dsKH[i].nhap();
         }
-        System.out.println("Đã nhập xong " + n + " khách hàng!");
+        System.out.println("Da nhap xong " + n + " khach hang!");
     }
     //xuat
     @Override
@@ -41,8 +43,15 @@ public class DanhSachKhachHang implements XuLiDuLieu {
     //them 
     @Override
     public void them() {
+        System.out.print("Nhap ma Khach hang: ");
+        String maKH = sc.nextLine();
+        if(timKhMa(maKH ) != null){
+            System.out.println("Da ton tai khach hang ");
+            return;
+        }
         dsKH = Arrays.copyOf(dsKH, n+1);
         dsKH[n] = new KhachHang();
+        dsKH[n].setMaKH(maKH);
         dsKH[n++].nhap();
         System.out.println("Them khach hang thanh cong");
     }
@@ -90,7 +99,7 @@ public class DanhSachKhachHang implements XuLiDuLieu {
             }
             //xoa
     @Override
-public void xoa(String key) {
+    public void xoa(String key) {
     for (int i = 0; i < n; i++) {
         if (dsKH[i].getMaKH().equalsIgnoreCase(key)) {
             for (int j = i; j < n - 1; j++) {
@@ -141,8 +150,8 @@ public void xoa(String key) {
     }
 }
  //ghi file
- @Override
-public void ghiFile() {
+    @Override
+    public void ghiFile() {
     try (BufferedWriter bw = new BufferedWriter(
         new OutputStreamWriter(new FileOutputStream("KhachHang.txt", false), "UTF-8"))) {
 

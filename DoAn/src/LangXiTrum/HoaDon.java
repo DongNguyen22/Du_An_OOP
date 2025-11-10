@@ -33,12 +33,29 @@ public class HoaDon {
         this.ngayLap = sc.nextLine();
         themCTHD();
     }
-    public void themCTHD(){
+    public void nhapN(){
+        System.out.print("Nhap ma hoa don: ");
+        this.maHD = sc.nextLine();
+        System.out.print("Nhap ma nhan vien: ");
+        this.maNV = sc.nextLine();
+        System.out.print("Nhap ma khach hang: ");
+        this.maKH = sc.nextLine();
+        System.out.print("Nhap ngay lap hoa don: ");
+        this.ngayLap = sc.nextLine();
         System.out.print("Nhap so luong chi tiet hoa don: ");
         int k=sc.nextInt();
         sc.nextLine();
         for(int i=0;i<k;i++){
             System.out.println("Nhap chi tiet hoa don thu: "+(i+1)+": ");
+            this.dsCT.themN();
+        }
+    }
+    public void themCTHD(){
+        System.out.print("Nhap so luong chi tiet hoa don: ");
+        int k=sc.nextInt();
+        sc.nextLine();
+        for(int i=0;i<k;i++){
+            System.out.println("Nhap chi tiet hoa don thu: "+(i+1));
             this.dsCT.them();
         }
     }

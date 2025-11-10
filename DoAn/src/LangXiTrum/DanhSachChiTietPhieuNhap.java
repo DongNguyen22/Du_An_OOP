@@ -24,7 +24,6 @@ public class DanhSachChiTietPhieuNhap  {
     public void nhap(int n) {
     dsCTPN = new ChiTietPhieuNhap[n];
     for (int i = 0; i < n; i++) {
-        System.out.println("Nhap chi tiet phieu nhap thu " + (i + 1) + ":");
         dsCTPN[i] = new ChiTietPhieuNhap();
     }
 }
@@ -35,7 +34,7 @@ public class DanhSachChiTietPhieuNhap  {
         else{
             dsCTPN = Arrays.copyOf(dsCTPN, dsCTPN.length+1);
             dsCTPN[dsCTPN.length-1] = new ChiTietPhieuNhap();
-            dsCTPN[dsCTPN.length-1].nhapSoLuong();
+            dsCTPN[dsCTPN.length-1].nhapCTPN();
         }
     }
     public void sua(String maPN){

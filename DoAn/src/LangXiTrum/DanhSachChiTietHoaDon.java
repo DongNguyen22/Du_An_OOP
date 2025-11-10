@@ -69,7 +69,7 @@ public class DanhSachChiTietHoaDon  {
     for (int i = 0; i < n; i++) {
         System.out.println("Nhap chi tiet hoa don thu " + (i + 1) + ":");
         dsct[i] = new ChiTietHoaDon();
-        dsct[i].nhap();
+        dsct[i].nhapN();
     }
     }
     public void them() {
@@ -77,6 +77,12 @@ public class DanhSachChiTietHoaDon  {
     dsct = Arrays.copyOf(dsct, size + 1);
     dsct[size] = new ChiTietHoaDon();
     dsct[size].nhap();
+    }
+    public void themN() {
+    int size = dsct.length;
+    dsct = Arrays.copyOf(dsct, size + 1);
+    dsct[size] = new ChiTietHoaDon();
+    dsct[size].nhapN();
     }
     public void sua(String maSP) {
     boolean found = false;

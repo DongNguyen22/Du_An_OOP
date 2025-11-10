@@ -210,14 +210,14 @@ public class DanhSachConNguoi implements XuLiDuLieu {
                         kh.setDiachi(sc.nextLine());
                         break;
                     case 5:
-                        System.out.println("Nhap lai toan bo thong tin nhan vien:");
+                        System.out.println("Nhap lai toan bo thong tin khach hang: ");
                         kh.nhap();
                         break;
                     default:
                         System.out.println("Lua chon khong hop le!");
                 }
     
-                System.out.println("da cap nhat thong tin nhan vien!");
+                System.out.println("da cap nhat thong tin Khach hang!");
                 return;
             }
         }
@@ -295,7 +295,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
         }
         n = size;
     } catch (IOException e) {
-        System.out.println("Lỗi đọc file: " + e.getMessage());
+        System.out.println("Loi đọc file: " + e.getMessage());
     }
 }
     @Override

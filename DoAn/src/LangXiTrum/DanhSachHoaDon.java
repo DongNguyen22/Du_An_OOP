@@ -23,7 +23,6 @@ public class DanhSachHoaDon{
         String line;
         int size = 0;
         dsHD = new HoaDon[0]; 
-
         while ((line = br.readLine()) != null) {
             String[] parts = line.split(";");
             if (parts.length >= 4) {
@@ -43,7 +42,6 @@ public class DanhSachHoaDon{
         System.out.println(" Loi doc file HoaDon.txt: " + e.getMessage());
     }
 }
-
     //them hoa don
    public void them(HoaDon hd) {
     dsHD = Arrays.copyOf(dsHD, dsHD.length + 1);
@@ -53,10 +51,8 @@ public class DanhSachHoaDon{
     public void nhap(int n) {
     for (int i = 0; i < n; i++) {
     System.out.println("Nhap hoa don thu: "+(i+1)+": ");
-    System.out.print("Nhap ma hoa don: ");
-    String maHD = sc.nextLine();
     HoaDon hd = new HoaDon();
-    hd.nhap(maHD);
+    hd.nhapN();
     dsHD[i] = hd;
      } 
     }

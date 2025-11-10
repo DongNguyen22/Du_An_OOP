@@ -22,7 +22,10 @@ public class DanhSachThucAn implements XuLiDuLieu {
         this.n=n;
         dsTA=Arrays.copyOf(dsTA, n);
         for(int i=0;i<n;i++){
-            dsTA[i].nhap();
+        System.out.print("Nhap ma san pham: ");
+        String maSP = sc.nextLine();
+        dsTA[i].setMaSP(maSP);
+        dsTA[i].nhap();
         }
     }
 
@@ -39,8 +42,15 @@ public class DanhSachThucAn implements XuLiDuLieu {
         dsTA = new ThucAn[0];
         n = 0;
     }
+        System.out.print("Nhap ma san pham: ");
+        String maSP = sc.nextLine();
+        if(timThucAnMa(maSP) != null){
+            System.out.println("Da ton tai san pham nay: ");
+            return;
+        }
         dsTA= Arrays.copyOf(dsTA, n+1);
         dsTA[n]=new ThucAn();
+        dsTA[n].setMaSP(maSP);
         dsTA[n++].nhap();
     }
     @Override

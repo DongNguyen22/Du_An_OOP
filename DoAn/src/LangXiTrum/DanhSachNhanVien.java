@@ -24,6 +24,8 @@ public class DanhSachNhanVien implements XuLiDuLieu {
         this.n=n;
         dsNV = new NhanVien[n];
         for(int i=0 ; i<n ; i++){
+            System.out.print("Nhap ma nhan vien: ");
+            dsNV[i].setMaNV(sc.nextLine());
             dsNV[i]=new NhanVien();
             dsNV[i].nhap();
         }
@@ -39,10 +41,17 @@ public class DanhSachNhanVien implements XuLiDuLieu {
     //them 
     @Override
     public void them() {
+        System.out.print("Nhap ma nhan vien: ");
+        String manv = sc.nextLine();
+        if(timnvMa(manv) != null ){
+            System.out.println("Da ton tai nhan vien nay: ");
+            return;
+        }
         dsNV = Arrays.copyOf(dsNV, n+1);
         dsNV[n] = new NhanVien();
+        dsNV[n].setMaNV(manv);
         dsNV[n++].nhap();
-        System.out.println("Them vien thanh cong");
+        System.out.println("Them nhan vien thanh cong");
     }
     //sua
     @Override
@@ -91,7 +100,7 @@ public class DanhSachNhanVien implements XuLiDuLieu {
             }
             //xoa
     @Override
-public void xoa(String key) {
+    public void xoa(String key) {
     for (int i = 0; i < n; i++) {
         if (dsNV[i].getMaNV().equalsIgnoreCase(key)) {
             for (int j = i; j < n - 1; j++) {
@@ -144,7 +153,7 @@ public void xoa(String key) {
 }
 
  //ghi file
- @Override
+    @Override
     public void ghiFile() {
     try (BufferedWriter bw = new BufferedWriter(
         new OutputStreamWriter(new FileOutputStream("NhanVien.txt", false), "UTF-8"))) {

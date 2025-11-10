@@ -89,12 +89,18 @@ public class DanhSachSanPham implements XuLiDuLieu{
         sc.nextLine(); 
         switch (choice) {
             case 1:
+                System.out.print("Nhap ma san pham: ");
+                String maSP = sc.nextLine();
                 ds[i] = new ThucAn();
+                ds[i].setMaSP(maSP);
                 ds[i].nhap();
                 System.out.println("Them thanh cong san pham");
                 break;
             case 2:
+                System.out.print("Nhap ma san pham: ");
+                String masp = sc.nextLine();
                 ds[i] = new ThucUong();
+                ds[i].setMaSP(masp);
                 ds[i].nhap();
                 System.out.println("Them thanh cong san pham");
                 break;
@@ -244,7 +250,7 @@ public class DanhSachSanPham implements XuLiDuLieu{
         ds = new ThucAn[0];
         n = 0;
     }
-    System.out.println("Nhap ma san pham: ");
+    System.out.print("Nhap ma san pham: ");
     String maSP = sc.nextLine();
     if(timSPtheoMaSp(maSP) != null ){
         System.out.println("Da ton tai san pham nay");
@@ -252,7 +258,7 @@ public class DanhSachSanPham implements XuLiDuLieu{
     }
     ds=Arrays.copyOf(ds, n+1);
     ds[n] = new ThucAn();
-        ds[n].setMaSP(maSP);
+    ds[n].setMaSP(maSP);
     ds[n++].nhap();
     System.out.print("Them san pham thanh cong");
    }
@@ -270,8 +276,8 @@ public class DanhSachSanPham implements XuLiDuLieu{
     }
     ds=Arrays.copyOf(ds, n+1);
     ds[n] = new ThucUong();
-        ds[n].setMaSP(maSP);
-        ds[n++].nhap();
+    ds[n].setMaSP(maSP);
+    ds[n++].nhap();
     System.out.println("Them san pham thanh cong");
    }
    public SanPham[] getDs() {

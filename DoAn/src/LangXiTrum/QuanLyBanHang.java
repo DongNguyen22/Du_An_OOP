@@ -379,11 +379,14 @@ public class QuanLyBanHang {
                     String maSP = sc.nextLine();
                     SanPham sp = dSachSanPham.timSPtheoMaSp(maSP);
                     if( sp != null ){
+                        chiTietPhieuNhap.setMaPN(maPN);
                         System.out.print("Nhap so luong: ");
                         chiTietPhieuNhap.setSoLuong(sc.nextInt());
                         sc.nextLine();
+                        System.out.print("Nhap don gia: ");
+                        chiTietPhieuNhap.setDonGia(sc.nextDouble());
+                        sc.nextLine();
                         sp.setSoLuong(chiTietPhieuNhap.getSoLuong()+sp.getSoLuong());
-                        chiTietPhieuNhap.setDonGia(sp.getDonGia());
                         chiTietPhieuNhap.setMaSP(maSP);
                         chiTietPhieuNhap.setMaPN(maPN);
                     }

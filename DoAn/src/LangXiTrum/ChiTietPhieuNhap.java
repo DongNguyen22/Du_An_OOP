@@ -57,11 +57,6 @@ public class ChiTietPhieuNhap {
         this.donGia = sc.nextDouble();
         sc.nextLine();
     }
-    public void nhapSoLuong() {
-    System.out.print("Nhap so luong");
-    this.soLuong =sc.nextInt();
-    sc.nextLine();
-}
     public void xuatCTPN() {
         System.out.println("+------------+------------+------------+-----------------+-----------------+");
         System.out.printf("| %-10s | %-10s | %10d | %15.2f | %15.2f |\n",

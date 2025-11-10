@@ -55,10 +55,24 @@ public class ChiTietHoaDon {
         this.donGia = donGia;
     }
     public void nhap(){
-        System.out.println("Nhap ma san pham");
+        System.out.print("Nhap ma san pham: ");
         this.maSP = sc.nextLine();
-        System.out.println("Nhap  so luong");
+        System.out.print("Nhap  so luong: ");
         this.soLuong = sc.nextInt();
+        sc.nextLine();
+    }
+    public void nhapN(){
+        System.out.print("Nhap ma hoa don: ");
+        this.maHD = sc.nextLine();
+        System.out.println("Nhap ma san pham: ");
+        this.maSP = sc.nextLine();
+        System.out.print("Nhap Ten san pham: ");
+        this.tenSP = sc.nextLine();
+        System.out.print("Nhap  so luong: ");
+        this.soLuong = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Nhap don gia: ");
+        this.donGia=sc.nextDouble();
         sc.nextLine();
     }
     public void hienThi() {
