@@ -511,9 +511,6 @@ public class QuanLyBanHang {
             labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = sp.getMaSP();
     }
-    for(int i=0 ; i<labels.length;i++){
-        System.out.println(labels[i]);
-    }
 }
     else if(keys.equalsIgnoreCase("NhanVien")){
         Loai =2;
@@ -576,7 +573,7 @@ public class QuanLyBanHang {
 
     for (int i = 0; i < sizeLabel; i++) {
         double tongNam = 0;
-        for (int q = 0; q < 4; q++) tongNam += Sum[i][q];
+        for (int j = 0; j < 4; j++) tongNam += Sum[i][j];
         System.out.printf("%-10s | %-12.2f | %-12.2f | %-12.2f | %-12.2f | %-15.2f\n",
                 labels[i], Sum[i][0], Sum[i][1], Sum[i][2], Sum[i][3], tongNam);
     }
