@@ -22,4 +22,3 @@ KH009;Bui Van Hieu;Nam;0909789789;33 Hai Ba Trung, Hai Duong
 KH010;Tran Thi Huyen;Nu;0910890890;21 Nguyen Trai, Nam Dinh
 KH011;Pham Van Kien;Nam;0911901901;99 Le Thanh Tong, Quang Ninh
 KH012;Nguyen Thi Lan;Nu;0912012012;15 Dien Bien Phu, Hue
-

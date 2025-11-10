@@ -6,7 +6,7 @@ TA;TA005;Mi xao bo;29;42000.0;dia;Gion;Cay
 TA;TA006;Chao ga;17;30000.0;to;Mem;Nhat
 TA;TA007;Banh bao nhan thit;50;12000.0;cai;Mem;Man
 TA;TA008;Xoi ga;30;25000.0;phan;Deo;Man
-TA;TA009;Ga ran phan nho;15;50000.0;phan;Gion;Cay
+TA;TA009;Ga ran phan nho;21;50000.0;phan;Gion;Cay
 TA;TA010;Khoai tay chien;29;20000.0;phan;Gion;Man
 TU;TU001;Ca phe den da;50;25000.0;ly;Khong Gas;250ml
 TU;TU002;Ca phe sua da;50;28000.0;ly;Khong Gas;250ml
@@ -15,7 +15,7 @@ TU;TU004;Tra sua tran chau;77;40000.0;ly;Khong Gas;350ml
 TU;TU005;Nuoc cam tuoi;45;30000.0;ly;Khong Gas;300ml
 TU;TU006;Sinh to bo;30;35000.0;ly;Khong Gas;300ml
 TU;TU007;Nuoc suoi Aquafina;100;10000.0;chai;Khong Gas;500ml
-TU;TU009;Coca Cola lon;90;15000.0;lon;Gas;330ml
+TU;TU009;Coca Cola lon;102;15000.0;lon;Gas;330ml
 TU;TU010;Bia Heineken;72;25000.0;lon;Gas;330ml
 TU;TU014;TIGER BAC;15;25000.0;LON;GAS;300ML
 TU;TU022;KOKA KOLA;5;11111.0;CHAI;GAS;500ML

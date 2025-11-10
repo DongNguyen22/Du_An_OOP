@@ -1,10 +1,10 @@
-NCC01;Cong ty Sach Alpha Books;02437678999;176 Thai Ha, Ha Noi
-NCC02;Cong ty Van hoa Phuong Nam;02838224455;940 Duong 3/2, Quan 11, TP HCM
-NCC03;Nha xuat ban Tre;02839304568;161B Ly Chinh Thang, Quan 3, TP HCM
-NCC04;Cong ty Fahasa;02838202943;60-62 Le Loi, Quan 1, TP HCM
-NCC05;Cong ty Nha Nam;02462817193;59 Do Quang, Cau Giay, Ha Noi
-NCC06;Cong ty Kim Dong;02438462025;55 Quang Trung, Hoan Kiem, Ha Noi
-NCC07;Cong ty Dong A Books;02838440255;34 Ho Bieu Chanh, Quan Phu Nhuan, TP HCM
-NCC08;Cong ty AZ Viet Nam;02435772888;12 Nguyen Van Cu, Long Bien, Ha Noi
-NCC09;Cong ty Bach Viet Books;02437586688;25 Nguyen Khanh Toan, Cau Giay, Ha Noi
-NCC10;Cong ty MCBooks;02466567890;260 Cau Giay, Ha Noi
+NCC01;Cong ty Thuc pham Acecook Viet Nam;02838224455;100 Nguyen Thi Minh Khai, Quan 3, TP HCM
+NCC02;Cong ty CP Kinh Do;02838228811;141 Nguyen Du, Quan 1, TP HCM
+NCC03;Cong ty CP Vinamilk;02854155555;10 Tan Trao, Quan 7, TP HCM
+NCC04;Cong ty CP PepsiCo Viet Nam;02838405588;88 Dong Khoi, Quan 1, TP HCM
+NCC05;Cong ty TNHH Nestle Viet Nam;02743697222;Nestle Road, Bien Hoa, Dong Nai
+NCC06;Cong ty CP Trung Nguyen Legend;02623900088;82-84 Bui Thi Xuan, Quan 1, TP HCM
+NCC07;Cong ty CP Masan Consumer;02862563000;12A Nguyen Thi Minh Khai, Quan 1, TP HCM
+NCC08;Cong ty CP Tan Hiep Phat;02743892039;219 Binh Duong Boulevard, Binh Duong
+NCC09;Cong ty CP Bibica;02838633793;443 Ly Thuong Kiet, Quan 10, TP HCM
+NCC10;Cong ty CP Vissan;02838552230;420 No Trang Long, Binh Thanh, TP HCM
