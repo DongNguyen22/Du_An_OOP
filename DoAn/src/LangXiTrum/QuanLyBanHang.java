@@ -511,6 +511,7 @@ public class QuanLyBanHang {
             labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = sp.getMaSP();
     }
+    
 }
     else if(keys.equalsIgnoreCase("NhanVien")){
         Loai =2;
