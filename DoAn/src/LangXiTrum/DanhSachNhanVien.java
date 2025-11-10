@@ -63,7 +63,8 @@ public class DanhSachNhanVien implements XuLiDuLieu {
                 System.out.println("2. Gioi tinh");
                 System.out.println("3. So dien thoai");
                 System.out.println("4. Dia chi");
-                System.out.println("5. Nhap lai toan bo");
+                System.out.println("5. Sua ngay sinh");
+                System.out.println("6. Nhap lai toan bo");
                 int choice = sc.nextInt();
                 sc.nextLine(); 
                 switch (choice) {
@@ -84,6 +85,9 @@ public class DanhSachNhanVien implements XuLiDuLieu {
                         nv.setDiachi(sc.nextLine());
                         break;
                     case 5:
+                        System.out.print("Nhap ngay sinh moi: ");
+                        nv.setNgaySinh(sc.nextLine());
+                    case 6:
                         System.out.println("Nhap lai toan bo thong tin nhan vien:");
                         nv.nhap();
                         break;
@@ -131,19 +135,18 @@ public class DanhSachNhanVien implements XuLiDuLieu {
             String line;
             dsNV = new NhanVien[0];
             int size = 0;
-
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(";");
                 if (parts.length < 6) continue;
-
                 String manv = parts[0];
                 String ten = parts[1];
-                String gtinh = parts[2];
-                String sdt = parts[3];
-                String diaChi = parts[4];
-                String chucVu = parts[5];
+                String ngaySinh = parts[2];
+                String gtinh = parts[3];
+                String sdt = parts[4];
+                String diaChi = parts[5];
+                String chucVu = parts[6];
                 dsNV = Arrays.copyOf(dsNV, size + 1);
-                dsNV[size++] = new NhanVien(manv,ten, gtinh, sdt, diaChi,chucVu);
+                dsNV[size++] = new NhanVien(manv,ten ,ngaySinh, gtinh, sdt, diaChi,chucVu);
             }
             n = size;
         }
@@ -161,6 +164,7 @@ public class DanhSachNhanVien implements XuLiDuLieu {
         for (int i = 0; i < n; i++) {
             String line = dsNV[i].getMaNV() + ";" +
                           dsNV[i].getTen() + ";" +
+                          dsNV[i].getNgaySinh() +";"+
                           dsNV[i].getGtinh() + ";" +
                           dsNV[i].getSdt() + ";" +
                           dsNV[i].getDiachi() + ";"+

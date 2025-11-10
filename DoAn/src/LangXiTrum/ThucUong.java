@@ -16,6 +16,11 @@ public class ThucUong extends SanPham{
     }
     public ThucUong() {
     }
+    public ThucUong(ThucUong x){
+        super(x);
+        this.gas =x.gas;
+        this.dungTich=x.dungTich;
+    }
     //getter
     public String getGas() {
         return this.gas;

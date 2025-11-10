@@ -11,10 +11,16 @@ public class NhaCungCap {
     public NhaCungCap(String maNCC, String tenNCC, String sDT, String diaChi) {
         this.maNCC = maNCC;
         this.tenNCC = tenNCC;
-        SDT = sDT;
-        DiaChi = diaChi;
+        this.SDT = sDT;
+        this.DiaChi = diaChi;
     }
     public NhaCungCap() {
+    }
+    public NhaCungCap(NhaCungCap x){
+        this.maNCC = x.maNCC;
+        this.tenNCC = x.tenNCC;
+        this.SDT = x.SDT;
+        this.DiaChi = x.DiaChi;
     }
     //getter
     public String getMaNCC() {

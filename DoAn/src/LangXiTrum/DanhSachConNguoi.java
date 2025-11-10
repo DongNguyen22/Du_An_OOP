@@ -139,7 +139,8 @@ public class DanhSachConNguoi implements XuLiDuLieu {
                 System.out.println("3. So dien thoai");
                 System.out.println("4. Dia chi");
                 System.out.println("5. Chuc Vu");
-                System.out.println("6. Nhap lai toan bo");
+                System.out.println("6. Sua ngay sinh");
+                System.out.println("7. Nhap lai toan bo");
                 int choice = sc.nextInt();
                 sc.nextLine(); 
                 switch (choice) {
@@ -164,6 +165,9 @@ public class DanhSachConNguoi implements XuLiDuLieu {
                         nv.setChucVu(sc.nextLine());
                         break;
                     case 6:
+                        System.out.print("Nhap ngay sinh moi: ");
+                        nv.setNgaySinh(sc.nextLine());
+                    case 7:
                         System.out.println("Nhap lai toan bo thong tin nhan vien:");
                         nv.nhap();
                         break;
@@ -230,18 +234,20 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     inTieuDeNV();
     for (ConNguoi cn : ds) {
         if (cn instanceof NhanVien nv)
-            System.out.println(nv);
+            {
+                System.out.println(nv);
+            }
     }
     inKetBangNV();
 }
     public static void inTieuDeNV() {
-    System.out.println("+--------+----------------------+-------+------------+------------+----------------------+-----------------+");
-    System.out.println("| Ma NV  | Ten                  | GTinh | SDT        | Chuc Vu    | Dia Chi              | Luong(VND)      |");
-    System.out.println("+--------+----------------------+-------+------------+------------+----------------------+-----------------+");
+    System.out.println("+--------+----------------------+----------------------+-------+------------+------------+----------------------+-----------------+");
+    System.out.println("| Ma NV  | Ten                  | Ngay Sinh            | GTinh | SDT        | Chuc Vu    | Dia Chi              | Luong(VND)      |");
+    System.out.println("+--------+----------------------+----------------------+-------+------------+------------+----------------------+-----------------+");
 }
 
     public static void inKetBangNV() {
-    System.out.println("+--------+----------------------+-------+------------+------------+----------------------+-----------------+");
+    System.out.println("+--------+----------------------+----------------------+-------+------------+------------+----------------------+-----------------+");
 }
     //xuat thong tin khach hang
     public void xuatKhachHang() {
@@ -249,9 +255,11 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     inTieuDeKH();
     for (ConNguoi cn : ds) {
         if (cn instanceof KhachHang kh)
-            System.out.println(kh);
+            {
+                System.out.println(kh);
+            }
     }
-    inKetBangKH();
+   inKetBangKH();
 }
     public static void inTieuDeKH() {
     System.out.println("+--------+----------------------+-------+------------+--------------------------------+");
@@ -276,12 +284,13 @@ public class DanhSachConNguoi implements XuLiDuLieu {
             if (parts[0].contains("NV")) {
                 String maNV = parts[0];
                 String ten = parts[1];
-                String gtinh = parts[2];
-                String sdt = parts[3];
-                String diaChi = parts[4];
-                String chucVu = parts.length > 5 ? parts[5] : "";
+                String ngaySinh = parts[2];
+                String gtinh = parts[3];
+                String sdt = parts[4];
+                String diaChi = parts[5];
+                String chucVu = parts[6];
                 ds = Arrays.copyOf(ds, size + 1);
-                ds[size++] = new NhanVien(maNV, ten, gtinh, sdt, diaChi, chucVu);
+                ds[size++] = new NhanVien(maNV, ten, ngaySinh, gtinh, sdt, diaChi, chucVu);
             } 
             else if (parts[0].contains("KH")) {
                 String maKH = parts[0];
@@ -295,7 +304,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
         }
         n = size;
     } catch (IOException e) {
-        System.out.println("Loi đọc file: " + e.getMessage());
+        System.out.println("Loi dọc file: " + e.getMessage());
     }
 }
     @Override
@@ -306,6 +315,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
             if (ds[i] instanceof NhanVien nv) {
                 String line = nv.getMaNV() + ";" +
                               nv.getTen() + ";" +
+                              nv.getNgaySinh() + ";"+
                               nv.getGtinh() + ";" +
                               nv.getSdt() + ";" +
                               nv.getDiachi() + ";" +
@@ -392,5 +402,34 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     }
     public ConNguoi[] getDs() {
         return ds;
+    }
+    public void timNVtheoNgaySinh(){
+        System.out.print("Nhap nam can tim kiem: ");
+        NhanVien[] kq =timNvYear(sc.nextInt());
+        sc.nextLine();
+        if(kq.length == 0){
+            System.out.println("Khong co nhan vien nao tim duoc ");
+            return;
+        }
+        inTieuDeNV();
+        for (NhanVien nhanVien : kq) {
+            System.out.println(nhanVien);
+        }
+        inKetBangNV();
+    }
+    public NhanVien[] timNvYear(int nam){
+        NhanVien[] ketqua = new NhanVien[0];
+        int size =0;
+        for(ConNguoi cn : ds){
+            if(cn instanceof NhanVien nv){
+                String[] parts = nv.getNgaySinh().split("-");
+                int year = Integer.parseInt(parts[2]);
+                if(year == nam){
+                    ketqua = Arrays.copyOf(ketqua, size+1);
+                    ketqua[size++]=nv;
+                }
+            }
+        }
+    return ketqua;
     }
 }

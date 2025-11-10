@@ -64,6 +64,8 @@ public class QuanLyBanHang {
             System.out.println("3. Sua thong tin nhan vien");
             System.out.println("4. Xoa nhan vien");
             System.out.println("5. Tim nhan vien theo ten");
+            System.out.println("6. Tim nhan vien theo ma ");
+            System.out.println("7. Tim nhan vien co ngay sinh theo nam");
             System.out.println("0. Quay lai menu chinh");
             System.out.print("Nhap lua chon: ");
             chon = sc.nextInt();
@@ -74,10 +76,10 @@ public class QuanLyBanHang {
                 case 3 -> suaNVIEN();
                 case 4 -> xoaNVIEN();
                 case 5 -> timNVIEN(); 
+                case 6 -> timNVma();
+                case 7 -> dsConNguoi.timNVtheoNgaySinh();
                 case 0 -> System.out.println("Quay lai menu chinh...");
                 default -> System.out.println("Lua chon khong hop le!");
-                
-
             }
             System.out.println();
         } while (chon != 0);
@@ -97,8 +99,24 @@ public class QuanLyBanHang {
                     String tenNV = sc.nextLine();
                     NhanVien[] dsNV=dsConNguoi.timNvTheoTen(tenNV);
                     System.out.println("Danh sach Nhan Vien tim thay:");
+                    dsConNguoi.inTieuDeNV();
                     for(NhanVien nv : dsNV) System.out.println(nv);
+                    dsConNguoi.inKetBangNV();
                 }
+    private void timNVma(){
+                    System.out.print("Nhap ma Nhan Vien can tim: ");
+                    String maNV= sc.nextLine();
+                    NhanVien nv = dsConNguoi.timNvMa(maNV);
+                    if(nv == null ){
+                        System.out.println("Khong tim thay Nhan Vien");
+                    }
+                    else{
+                        System.out.println("Thong tin Nhan Vien tim thay: ");
+                        dsConNguoi.inTieuDeNV();
+                        System.out.println(nv);
+                        dsConNguoi.inKetBangNV();
+                    }
+    }  
     
     // ===================== MENU CON KHÁCH HÀNG =====================
     public  void menuKhachHang() {
@@ -110,6 +128,7 @@ public class QuanLyBanHang {
             System.out.println("3. Sua thong tin khach hang");
             System.out.println("4. Xoa khach hang");
             System.out.println("5. Tim khach hang theo ten");
+            System.out.println("6.Tim khach hang theo ma");
             System.out.println("0. Quay lai menu chinh");
             System.out.print("Nhap lua chon: ");
             chon = sc.nextInt();
@@ -121,6 +140,7 @@ public class QuanLyBanHang {
                 case 3 -> suaKH();
                 case 4 -> xoaKH();
                 case 5 -> timKH();
+                case 6 -> timKHma();
                 case 0 -> System.out.println("Quay lai menu chinh...");
                 default -> System.out.println("Lua chon khong hop le!");
             }
@@ -142,8 +162,24 @@ public class QuanLyBanHang {
                     String tenKH = sc.nextLine();
                     KhachHang[] dskh=dsConNguoi.timKhTen(tenKH);
                     System.out.println("Danh sach khach hang tim thay:");
+                    dsConNguoi.inTieuDeKH();
                     for(KhachHang kh : dskh) System.out.println(kh);
-                }              
+                    dsConNguoi.inKetBangKH();
+                }    
+    private void timKHma(){
+                    System.out.print("Nhap ma khach hang can tim: ");
+                    String maKH= sc.nextLine();
+                    KhachHang kh = dsConNguoi.timKhMa(maKH);
+                    if(kh == null ){
+                        System.out.println("Khong tim thay khach hang");
+                    }
+                    else{
+                        System.out.println("Thong tin khach hang tim thay: ");
+                        dsConNguoi.inTieuDeKH();
+                        System.out.println(kh);
+                        dsConNguoi.inKetBangKH();
+                    }
+    }          
     // ===================== MENU CON Sản Phẩm =====================
     public void menuSanPham() {
         int chon;
@@ -511,7 +547,7 @@ public class QuanLyBanHang {
             labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = sp.getMaSP();
     }
-    
+
 }
     else if(keys.equalsIgnoreCase("NhanVien")){
         Loai =2;

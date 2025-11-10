@@ -14,9 +14,15 @@ public class ChiTietPhieuNhap {
         this.soLuong = soLuong;
         this.donGia = donGia;
     }
-    //getter
+    public ChiTietPhieuNhap(ChiTietPhieuNhap x){
+        this.maPN=x.maPN;
+        this.maSP =x.maSP;
+        this.soLuong =x.soLuong;
+        this.donGia =x.donGia;
+    }
     public ChiTietPhieuNhap() {
     }
+    //getter
     public String getMaPN() {
         return maPN;
     }

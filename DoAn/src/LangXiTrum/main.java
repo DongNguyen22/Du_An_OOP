@@ -7,4 +7,4 @@ public class main {
         QuanLyBanHang qlbh = new QuanLyBanHang();
         qlbh.menuChinh();
     }
-    }
+}

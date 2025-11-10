@@ -4,12 +4,14 @@ public class NhanVien extends ConNguoi {
     //thuoc tinh
     private String maNV;
     private String chucVu;
+    private String ngaySinh;
     private static final double luongCB=3000;
     //constructor
-    public NhanVien(String maNV,String ten, String gtinh, String sdt, String diachi,String chucVu) {
+    public NhanVien(String maNV,String ten ,String ngaySinh, String gtinh, String sdt, String diachi,String chucVu) {
         super(ten, gtinh, sdt, diachi);
         this.maNV=maNV;
         this.chucVu=chucVu;
+        this.ngaySinh = ngaySinh;
     }
     public NhanVien(){
 
@@ -19,6 +21,7 @@ public class NhanVien extends ConNguoi {
         super(x);
         this.maNV=x.maNV;
         this.chucVu=x.chucVu;
+        this.ngaySinh=x.ngaySinh;
     }
     //tinh luong
     public double tinhLuong() {
@@ -33,13 +36,15 @@ public class NhanVien extends ConNguoi {
     @Override
     public void nhap(){
         super.nhap();
-        System.out.print("nhap chuc vu");
+        System.out.print("nhap chuc vu: ");
         this.chucVu=sc.nextLine();
+        System.out.print("Nhap ngay sinh: ");
+        this.ngaySinh = sc.nextLine();
     }
     @Override
     public String toString() {
-    return String.format("| %-6s | %-20s | %-5s | %-10s | %-10s | %-20s | %10.2f      |",
-            maNV, ten, gtinh, sdt, chucVu, diaChi, tinhLuong());
+    return String.format("| %-6s | %-20s | %-20s | %-5s | %-10s | %-10s | %-20s | %10.2f      |",
+            maNV, ten,ngaySinh, gtinh, sdt, chucVu, diaChi, tinhLuong());
 }
 
    //getter
@@ -49,11 +54,17 @@ public class NhanVien extends ConNguoi {
    public String getChucVu() {
     return this.chucVu;
    }
+   public String getNgaySinh(){
+    return this.ngaySinh;
+   }
    //setter
    public void setMaNV(String maNV) {
     this.maNV = maNV;
    }
    public void setChucVu(String chucVu) {
     this.chucVu = chucVu;
+   }
+   public void setNgaySinh(String ngaySinh){
+    this.ngaySinh = ngaySinh;
    }
 }

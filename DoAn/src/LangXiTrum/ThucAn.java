@@ -16,6 +16,11 @@ public class ThucAn extends SanPham{
     }
     public ThucAn() {
     }
+    public ThucAn(ThucAn x){
+        super(x);
+        this.doGion=x.doGion;
+        this.giaVi=x.giaVi;
+    }
     //getter
     public String getDoGion() {
         return this.doGion;

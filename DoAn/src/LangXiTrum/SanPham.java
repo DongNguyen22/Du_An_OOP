@@ -28,6 +28,14 @@ public abstract class SanPham {
         this.maLoai = maLoai;
         this.soLuong = soLuong;
     }
+    public SanPham(SanPham x){
+        this.maSP  = x.maSP;
+        this.tenSP = x.tenSP;
+        this.donGia = x.donGia;
+        this.dvt = x.dvt;
+        this.maLoai = x.maLoai;
+        this.soLuong = x.soLuong;
+    }
     public abstract void nhap();
     //getter
     public String getMaSP() {

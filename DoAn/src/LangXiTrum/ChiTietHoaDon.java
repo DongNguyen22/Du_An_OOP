@@ -17,6 +17,13 @@ public class ChiTietHoaDon {
         this.soLuong = soLuong;
         this.donGia = donGia;
     }
+    public ChiTietHoaDon(ChiTietHoaDon x){
+        this.maHD = x.maHD;
+        this.maSP = x.maSP;
+        this.tenSP=x.tenSP;
+        this.soLuong=x.soLuong;
+        this.donGia=x.donGia;
+    }
     //getter
     public ChiTietHoaDon() {
     }

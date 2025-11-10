@@ -22,6 +22,13 @@ public class HoaDon {
         this.ngayLap = ngayLap;
         this.dsCT = new DanhSachChiTietHoaDon();
     }
+    public HoaDon(HoaDon x){
+        this.maHD = x.maHD;
+        this.maNV = x.maNV;
+        this.maKH = x.maKH;
+        this.ngayLap = x.ngayLap;
+        this.dsCT = x.dsCT;
+    }
     //nhap
     public void nhap(String maHD){
         this.maHD = maHD;
