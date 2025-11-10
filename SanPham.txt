@@ -1,5 +1,5 @@
-TA;TA001;Banh mi thit;38;15000.0;o;Gion;Man
-TA;TA002;Pho bo;30;40000.0;to;Mem;Dam da
+TA;TA001;Banh mi thit;40;15000.0;o;Gion;Man
+TA;TA002;Pho bo;33;40000.0;to;Mem;Dam da
 TA;TA003;Com tam suon bi;15;45000.0;phan;Gion;Man
 TA;TA004;Bun cha Ha Noi;31;35000.0;to;Mem;Thom
 TA;TA005;Mi xao bo;29;42000.0;dia;Gion;Cay

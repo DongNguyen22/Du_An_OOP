@@ -162,7 +162,7 @@ public class DanhSachPhieuNhap {
                             pn.getMaNV() + ";" +
                             pn.getMaNCC() + ";" +
                             pn.getNgayNhap() +";"+
-                            pn.getTongSoLuong();
+                            pn.tinhTongSoLuong();
             bwPN.write(linePN);
             bwPN.newLine();
             ChiTietPhieuNhap[] dsct = pn.getDSCTPN().getChiTietPhieuNhaps();
