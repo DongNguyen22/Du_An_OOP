@@ -66,7 +66,7 @@ public class DanhSachChiTietHoaDon  {
     }
     public void nhap(int n) {
     dsct = new ChiTietHoaDon[n];
-    for (int i = 0; i < n; i++) {
+      for (int i = 0; i < n; i++) {
         System.out.println("Nhap chi tiet hoa don thu " + (i + 1) + ":");
         dsct[i] = new ChiTietHoaDon();
         dsct[i].nhapN();
@@ -86,7 +86,7 @@ public class DanhSachChiTietHoaDon  {
     }
     public void sua(String maSP) {
     boolean found = false;
-    for (ChiTietHoaDon ct : dsct) {
+      for (ChiTietHoaDon ct : dsct) {
         if (ct.getMaSP().equalsIgnoreCase(maSP)) {
             found = true;
             int choice;
@@ -135,7 +135,7 @@ public class DanhSachChiTietHoaDon  {
 }
     public void xoa(String key) {
     int size = dsct.length;
-    for (int i = 0; i < size; i++) {
+      for (int i = 0; i < size; i++) {
         if (dsct[i].getMaHD().equalsIgnoreCase(key)) {
             for (int j = i; j < size - 1; j++) {
                 dsct[j] = dsct[j + 1];

@@ -26,41 +26,41 @@ public class DanhSachSanPham implements XuLiDuLieu{
         System.out.println("Danh sach san pham trong.");
         return;
     }
-    System.out.println("Danh muc san pham Thuc An:");
+        System.out.println("Danh muc san pham Thuc An:");
     inTieuDeTA();
-    for (SanPham sp : ds) {
-        if(sp instanceof ThucAn TA){
-            System.out.println(TA);
+        for (SanPham sp : ds) {
+         if(sp instanceof ThucAn TA){
+            TA.xuat();
         }
     }
     inKetBangTU_TA();
-    System.out.println("Danh muc san pham Thuc Uong:");
+        System.out.println("Danh muc san pham Thuc Uong:");
     inTieuDeTU();
-    for (SanPham sp : ds) {
-        if(sp instanceof ThucUong TU){
-            System.out.println(TU);
+        for (SanPham sp : ds) {
+         if(sp instanceof ThucUong TU){
+            TU.xuat();
         }
 }
     inKetBangTU_TA();
 }
    public void inTieuDeTA() {
-    System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
-    System.out.println("| Ma SP    | Ten San Pham              | Don Gia    | Don Vi   | So Luong | Ma Loai  | Do Gion    | Gia Vi     |");
-    System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
+        System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
+        System.out.println("| Ma SP    | Ten San Pham              | Don Gia    | Don Vi   | So Luong | Ma Loai  | Do Gion    | Gia Vi     |");
+        System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
 }
    public void inTieuDeTU() {
-    System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
-    System.out.println("| Ma SP    | Ten San Pham              | Don Gia    | Don Vi   | So Luong | Ma Loai  | Dung Tich  | Gas        |");
-    System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
+        System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
+        System.out.println("| Ma SP    | Ten San Pham              | Don Gia    | Don Vi   | So Luong | Ma Loai  | Dung Tich  | Gas        |");
+        System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
 }
     public void inKetBangTU_TA() {
-    System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
+        System.out.println("+----------+---------------------------+------------+----------+----------+----------+------------+------------+");
 }
    // tim san pham
    public SanPham timSPtheoMaSp(String key){
-    for(SanPham sp : ds){
-        if(sp.getMaSP().equalsIgnoreCase(key)){
-            return sp;
+        for(SanPham sp : ds){
+             if(sp.getMaSP().equalsIgnoreCase(key)){
+                return sp;
         }
     }
     return null;
@@ -69,9 +69,9 @@ public class DanhSachSanPham implements XuLiDuLieu{
    public SanPham[] timSanPhamTen(String tenSP){
      SanPham[] ketqua= new SanPham[0];
      int size=0;
-     for(SanPham sp : ds){
-        if(sp.getTenSP().equalsIgnoreCase(tenSP)){
-            ketqua[size++]=sp;
+         for(SanPham sp : ds){
+                if(sp.getTenSP().equalsIgnoreCase(tenSP)){
+                ketqua[size++]=sp;
         }
      }
      return ketqua;
@@ -80,11 +80,11 @@ public class DanhSachSanPham implements XuLiDuLieu{
    public void nhap(int n) {
     this.n = n;
     ds = Arrays.copyOf(ds, n);
-    for (int i = 0; i < n; i++) {
-        System.out.println("Nhap doi tuong thu " + (i + 1));
-        System.out.println("1. Them Thuc An");
-        System.out.println("2. Them Thuc Uong");
-        System.out.print("Chon: ");
+      for (int i = 0; i < n; i++) {
+            System.out.println("Nhap doi tuong thu " + (i + 1));
+            System.out.println("1. Them Thuc An");
+            System.out.println("2. Them Thuc Uong");
+            System.out.print("Chon: ");
         int choice = sc.nextInt();
         sc.nextLine(); 
         switch (choice) {
@@ -116,9 +116,9 @@ public class DanhSachSanPham implements XuLiDuLieu{
     System.out.println("2.Them Thuc Uong");
     int choice=sc.nextInt();
     sc.nextLine();
-    if(choice == 1) themTA();
-    else if(choice == 2) themTU();
-   }
+        if(choice == 1) themTA();
+        else if(choice == 2) themTU();
+    }
    @Override
    public void sua(String maSP) {
     boolean found = false;
@@ -171,7 +171,7 @@ public class DanhSachSanPham implements XuLiDuLieu{
    }
    @Override
     public void xoa(String key) {
-    for (int i = 0; i < n; i++) {
+      for (int i = 0; i < n; i++) {
         if (ds[i].getMaSP().equalsIgnoreCase(key)) {
             for (int j = i; j < n - 1; j++) {
                 ds[j] = ds[j + 1];
@@ -246,13 +246,13 @@ public class DanhSachSanPham implements XuLiDuLieu{
    }
    //them thuc an
    public void themTA(){
-    if (ds == null) {
+      if (ds == null) {
         ds = new ThucAn[0];
         n = 0;
     }
     System.out.print("Nhap ma san pham: ");
     String maSP = sc.nextLine();
-    if(timSPtheoMaSp(maSP) != null ){
+      if(timSPtheoMaSp(maSP) != null ){
         System.out.println("Da ton tai san pham nay");
         return;
     }
@@ -262,15 +262,20 @@ public class DanhSachSanPham implements XuLiDuLieu{
     ds[n++].nhap();
     System.out.print("Them san pham thanh cong");
    }
+    // them tham so
+   public void themTA(String maSP, String tenSP, double donGia, String dvt, String maLoai,int soLuong,String doGion,String giaVi){
+       ds = Arrays.copyOf(ds,n+1);
+       ds[n++] = new ThucAn(maSP, tenSP, donGia, dvt, maLoai, doGion, giaVi);
+   }
    //them thuc Uong
    public void themTU(){
-    if (ds == null) {
+      if (ds == null) {
         ds = new ThucAn[0];
         n = 0;
     }
     System.out.print("Nhap ma san pham: ");
     String maSP = sc.nextLine();
-    if(timSPtheoMaSp(maSP) != null ){
+      if(timSPtheoMaSp(maSP) != null ){
         System.out.println("Da ton tai san pham nay");
         return;
     }
@@ -280,7 +285,23 @@ public class DanhSachSanPham implements XuLiDuLieu{
     ds[n++].nhap();
     System.out.println("Them san pham thanh cong");
    }
+   //them tham so
+   public void themTU(String maSP, String tenSP, double donGia, String dvt, String maLoai,int soLuong,String dungTich,String gas){
+     ds =Arrays.copyOf(ds, n+1);
+     ds[n++] = new ThucUong(maSP, tenSP, donGia, dvt, maLoai, gas, dungTich);
+   }
    public SanPham[] getDs() {
     return ds;
    }
+ public SanPham[] timSPten(String tenSP){
+    SanPham[] ketqua = new SanPham[0];
+    int size=0;
+    for (SanPham sanPham : ds) {
+        if(sanPham.getTenSP().equalsIgnoreCase(tenSP)){
+            ketqua = Arrays.copyOf(ketqua,size+1);
+            ketqua[size++] = sanPham;
+        }
+    }
+    return ketqua;
+ }
 }

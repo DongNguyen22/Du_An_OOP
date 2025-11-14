@@ -21,7 +21,7 @@ public class DanhSachNhaCungCap implements XuLiDuLieu {
     public void nhap(int sl) {
     System.out.println("Nhap danh sach " + sl + " nha cung cap:");
     dsNCC = Arrays.copyOf(dsNCC, n + sl);
-    for (int i = 0; i < sl; i++) {
+      for (int i = 0; i < sl; i++) {
         dsNCC[n] = new NhaCungCap();
         dsNCC[n++].nhap();
     }

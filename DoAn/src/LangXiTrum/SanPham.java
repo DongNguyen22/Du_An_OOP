@@ -36,7 +36,6 @@ public abstract class SanPham {
         this.maLoai = x.maLoai;
         this.soLuong = x.soLuong;
     }
-    public abstract void nhap();
     //getter
     public String getMaSP() {
         return this.maSP;
@@ -74,6 +73,25 @@ public abstract class SanPham {
     }
     public void setMaLoai(String maLoai) {
         this.maLoai = maLoai;
+    }
+    public void nhap(){
+        System.out.print("nhap ma loai: ");
+        this.maLoai=sc.nextLine();
+        System.out.print("nhap ten san pham: ");
+        this.tenSP=sc.nextLine();
+        System.out.print("Nhap so luong:");
+        this.soLuong=sc.nextInt();
+        sc.nextLine();
+        System.out.print("nhap don gia: ");
+        this.donGia=sc.nextDouble();
+        sc.nextLine();
+        System.out.print("nhap don vi tinh: ");
+        this.dvt=sc.nextLine();
+    }
+    public void xuat(){
+        System.out.printf(
+        "| %-8s | %-25s | %-10.0f | %-8s | %8d | %-8s |",
+        maSP, tenSP, donGia, dvt, soLuong, maLoai);
     }
     @Override
     public String toString() {

@@ -42,6 +42,13 @@ public class NhanVien extends ConNguoi {
         this.ngaySinh = sc.nextLine();
     }
     @Override
+    public void xuat() {
+    System.out.printf("| %-8s | %-12s | %-12s | %10.2f | ",
+        maNV, ngaySinh, chucVu, tinhLuong());
+        super.xuat();
+}
+
+    @Override
     public String toString() {
     return String.format("| %-6s | %-20s | %-20s | %-5s | %-10s | %-10s | %-20s | %10.2f      |",
             maNV, ten,ngaySinh, gtinh, sdt, chucVu, diaChi, tinhLuong());

@@ -36,6 +36,10 @@ public class ConNguoi {
         System.out.print("nhap dia chi");
         diaChi=sc.nextLine();
     }
+    public void xuat() {
+        System.out.printf(" %-20s | %-10s | %-11s | %-30s |\n",
+            ten, gtinh, sdt, diaChi);
+}
     // getter
     public String getTen() {
         return ten;

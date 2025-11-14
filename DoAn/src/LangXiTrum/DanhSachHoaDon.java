@@ -49,11 +49,11 @@ public class DanhSachHoaDon{
 }
     //khoi tao n phan tu dau tien trong danh sach hoa don
     public void nhap(int n) {
-    for (int i = 0; i < n; i++) {
-    System.out.println("Nhap hoa don thu: "+(i+1)+": ");
-    HoaDon hd = new HoaDon();
-    hd.nhapN();
-    dsHD[i] = hd;
+      for (int i = 0; i < n; i++) {
+         System.out.println("Nhap hoa don thu: "+(i+1)+": ");
+         HoaDon hd = new HoaDon();
+          hd.nhapN();
+          dsHD[i] = hd;
      } 
     }
     public void xuat() {
@@ -68,7 +68,7 @@ public class DanhSachHoaDon{
     }
     public void sua(String maHD) {
     boolean found = false;
-    for (HoaDon hoaDon : dsHD) {
+      for (HoaDon hoaDon : dsHD) {
         if (hoaDon.getMaHD().equalsIgnoreCase(maHD)) {
             found = true;
             int choice;
@@ -180,7 +180,7 @@ public class DanhSachHoaDon{
     public HoaDon[] timHDperMonth(int start , int end , int months , int years){
         HoaDon[] ketqua = new HoaDon[0];
         int size = 0;
-        for (HoaDon hoaDon : dsHD) {
+         for (HoaDon hoaDon : dsHD) {
             if(hoaDon.getNgayLap() == null ) continue;
             String[] parts = hoaDon.getNgayLap().split("-");
             int day = Integer.parseInt(parts[0]);
@@ -196,7 +196,7 @@ public class DanhSachHoaDon{
     //tim hoa don theo ma nhan vien 
     public HoaDon[] timHDtheoNV(String maNV) {
     HoaDon[] ketQua = new HoaDon[0];
-    for (HoaDon hoaDon : dsHD) {
+      for (HoaDon hoaDon : dsHD) {
         if (hoaDon.getMaNV().equalsIgnoreCase(maNV)) {
             ketQua = Arrays.copyOf(ketQua, ketQua.length + 1);
             ketQua[ketQua.length - 1] = hoaDon;
@@ -207,5 +207,4 @@ public class DanhSachHoaDon{
     public HoaDon[] getDsHD() {
         return dsHD;
     }
-
 }

@@ -65,7 +65,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     }
     // tim nhan vien theo ma
     public NhanVien timNvMa(String key) {
-    for (ConNguoi cn : ds) {
+     for (ConNguoi cn : ds) {
         if (cn instanceof NhanVien nv && nv.getMaNV().equalsIgnoreCase(key)){
             return nv;
         }
@@ -99,7 +99,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
 }
     // Xoa thong tin  nhan vien
     public void xoaNV(String id) {
-    for (int i = 0; i < n; i++) {
+     for (int i = 0; i < n; i++) {
         if (ds[i] instanceof NhanVien) {
             NhanVien nv = (NhanVien) ds[i];
             if (nv.getMaNV().equals(id)) {
@@ -113,7 +113,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
 }
     }
     public void xoaKH(String id) {
-    for (int i = 0; i < n; i++) {
+     for (int i = 0; i < n; i++) {
         if (ds[i] instanceof KhachHang) {
             KhachHang kh = (KhachHang) ds[i];
             if (kh.getMaKH().equals(id)) {
@@ -128,7 +128,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     }
     // sua thong tin nhan vien
     public void suaNV(String maNV) {
-    for (ConNguoi cn: ds) {
+     for (ConNguoi cn: ds) {
         if (cn instanceof NhanVien) {
             NhanVien nv = (NhanVien) cn;
             if (nv.getMaNV().equals(maNV)) {
@@ -183,7 +183,7 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     System.out.println("Khong tim thay sinh vien co manv:" + maNV);
 }
     public void suaKH(String maKH) {
-    for (ConNguoi cn: ds) {
+     for (ConNguoi cn: ds) {
         if (cn instanceof KhachHang) {
             KhachHang kh = (KhachHang) cn;
             if (kh.getMaKH().equals(maKH)) {
@@ -232,22 +232,22 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     public void xuatNhanVien() {
     System.out.println("Danh sach nhan vien:");
     inTieuDeNV();
-    for (ConNguoi cn : ds) {
+     for (ConNguoi cn : ds) {
         if (cn instanceof NhanVien nv)
             {
-                System.out.println(nv);
+                nv.xuat();
             }
     }
     inKetBangNV();
 }
     public static void inTieuDeNV() {
-    System.out.println("+--------+----------------------+----------------------+-------+------------+------------+----------------------+-----------------+");
-    System.out.println("| Ma NV  | Ten                  | Ngay Sinh            | GTinh | SDT        | Chuc Vu    | Dia Chi              | Luong(VND)      |");
-    System.out.println("+--------+----------------------+----------------------+-------+------------+------------+----------------------+-----------------+");
-}
-
+    System.out.println("+----------+--------------+--------------+------------+-----------------------+------------+-------------+-----------------------------+");
+    System.out.printf("| %-8s | %-12s | %-12s | %-10s | %-21s | %-10s | %-11s | %-30s \n",
+        "Ma NV", "Ngay Sinh", "Chuc Vu", "Luong", "Ten", "GTinh", "SDT", "Dia Chi");
+    System.out.println("+----------+--------------+--------------+------------+-----------------------+------------+-------------+-----------------------------+");
+    }
     public static void inKetBangNV() {
-    System.out.println("+--------+----------------------+----------------------+-------+------------+------------+----------------------+-----------------+");
+    System.out.println("+----------+--------------+--------------+------------+-----------------------+------------+-------------+-----------------------------+");
 }
     //xuat thong tin khach hang
     public void xuatKhachHang() {
@@ -256,18 +256,18 @@ public class DanhSachConNguoi implements XuLiDuLieu {
     for (ConNguoi cn : ds) {
         if (cn instanceof KhachHang kh)
             {
-                System.out.println(kh);
+                kh.xuat();
             }
     }
    inKetBangKH();
 }
     public static void inTieuDeKH() {
-    System.out.println("+--------+----------------------+-------+------------+--------------------------------+");
-    System.out.println("| Ma KH  | Ten                  | GTinh | SDT        | Dia Chi                        |");
-    System.out.println("+--------+----------------------+-------+------------+--------------------------------+");
+    System.out.println("+-----------+----------------------+------------+-------------+--------------------------------+");
+    System.out.println("| Ma KH     | Ten                  | GTinh      | SDT         | Dia Chi                        |");
+    System.out.println("+-----------+----------------------+------------+-------------+--------------------------------+");
 }
     public static void inKetBangKH() {
-    System.out.println("+--------+----------------------+-------+------------+--------------------------------+");
+    System.out.println("+-----------+----------------------+------------+-------------+--------------------------------+");
 }
     @Override
     public void docFile() {

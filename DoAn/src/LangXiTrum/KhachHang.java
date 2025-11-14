@@ -20,8 +20,13 @@ public class KhachHang extends ConNguoi{
         super.nhap();
     }
     @Override
+    public void xuat() {
+        System.out.printf("| %-9s |", maKH);
+        super.xuat();
+    }
+    @Override
     public String toString() {
-    return String.format("| %-6s | %-20s | %-5s | %-10s | %-20s",
+    return String.format("| %-6s | %-19s| %-5s | %-10s | %-20s",
             maKH, ten, gtinh, sdt, diaChi);
 }
     //getter

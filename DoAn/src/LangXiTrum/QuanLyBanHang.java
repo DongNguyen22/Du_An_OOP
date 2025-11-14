@@ -100,7 +100,7 @@ public class QuanLyBanHang {
                     NhanVien[] dsNV=dsConNguoi.timNvTheoTen(tenNV);
                     System.out.println("Danh sach Nhan Vien tim thay:");
                     dsConNguoi.inTieuDeNV();
-                    for(NhanVien nv : dsNV) System.out.println(nv);
+                    for(NhanVien nv : dsNV) nv.xuat();;
                     dsConNguoi.inKetBangNV();
                 }
     private void timNVma(){
@@ -113,7 +113,7 @@ public class QuanLyBanHang {
                     else{
                         System.out.println("Thong tin Nhan Vien tim thay: ");
                         dsConNguoi.inTieuDeNV();
-                        System.out.println(nv);
+                        nv.xuat();
                         dsConNguoi.inKetBangNV();
                     }
     }  
@@ -163,7 +163,7 @@ public class QuanLyBanHang {
                     KhachHang[] dskh=dsConNguoi.timKhTen(tenKH);
                     System.out.println("Danh sach khach hang tim thay:");
                     dsConNguoi.inTieuDeKH();
-                    for(KhachHang kh : dskh) System.out.println(kh);
+                    for(KhachHang kh : dskh) kh.xuat();
                     dsConNguoi.inKetBangKH();
                 }    
     private void timKHma(){
@@ -176,7 +176,7 @@ public class QuanLyBanHang {
                     else{
                         System.out.println("Thong tin khach hang tim thay: ");
                         dsConNguoi.inTieuDeKH();
-                        System.out.println(kh);
+                        kh.xuat();
                         dsConNguoi.inKetBangKH();
                     }
     }          
@@ -192,6 +192,7 @@ public class QuanLyBanHang {
             System.out.println("5. Sua thong tin san pham");
             System.out.println("6. Xoa san pham");
             System.out.println("7. Tim san pham theo ma");
+            System.out.println("8.Tim san pham theo ten");
             System.out.println("0. Thoat");
             System.out.print(">> Nhap lua chon: ");
             chon=sc.nextInt();
@@ -204,6 +205,25 @@ public class QuanLyBanHang {
                 case 5 -> menuSuaSanPham();
                 case 6 -> menuXoaSanPham();
                 case 7 -> menuTimSanPham();
+                case 8 -> {
+                    System.out.print("Nhap ten san pham can tim: ");
+                    SanPham[] kq =dSachSanPham.timSPten(sc.nextLine());
+                    if(kq.length == 0) {
+                        System.out.println("Khong tim thay san pham ");
+                        return;
+                    }
+                    System.out.println("Danh sach san pham tim duoc: ");
+                    for (SanPham sanPham : kq) {
+                        if(sanPham.getMaLoai().equalsIgnoreCase("TA")){
+                            dSachSanPham.inTieuDeTA();
+                        }
+                        else if(sanPham.getMaLoai().equalsIgnoreCase("TU")){
+                            dSachSanPham.inTieuDeTU();
+                        }
+                        sanPham.xuat();
+                        dSachSanPham.inKetBangTU_TA();
+                    }
+                }
                 case 0 -> System.out.println("Quay lai menu chinh!");
                 default -> System.out.println("Lua chon khong hop le!");
             }
@@ -232,7 +252,8 @@ public class QuanLyBanHang {
              {
                 dSachSanPham.inTieuDeTU();
              }
-            System.out.println(sp);
+            sp.xuat();
+            dSachSanPham.inKetBangTU_TA();
         }
         else System.out.println("Khong tim thay san pham co ma: " + maSP);
     }
@@ -547,7 +568,6 @@ public class QuanLyBanHang {
             labels = Arrays.copyOf(labels, sizeLabel+1);
             labels[sizeLabel++] = sp.getMaSP();
     }
-
 }
     else if(keys.equalsIgnoreCase("NhanVien")){
         Loai =2;
@@ -576,21 +596,29 @@ public class QuanLyBanHang {
         int year = Integer.parseInt(parts[2]);
         if (year != nam) continue;
         int quy = (month - 1) / 3;
-        int index=-1;
         if(Loai == 1 ){
             for(ChiTietHoaDon cthd : hd.getDSCTHD().getDsct())
             {
-            index =timViTri(labels, sizeLabel,cthd.getMaSP());
-            Sum[index][quy] += cthd.getThanhTien();
+                for(int i =0;i<sizeLabel;i++){
+                    if(labels[i].equalsIgnoreCase(cthd.getMaSP())){
+                        Sum[i][quy] += cthd.getThanhTien();
+                    }
+                }
             }
         }
         if(Loai == 2 ){
-            index =timViTri(labels, sizeLabel,hd.getMaNV());
-            Sum[index][quy] += hd.getTongTien();
+            for(int i=0;i<sizeLabel;i++){
+                if(labels[i].equalsIgnoreCase(hd.getMaNV())){
+                    Sum[i][quy]+=hd.getTongTien();
+                }
+            }
         }
         if(Loai == 3 ){
-            index =timViTri(labels, sizeLabel, hd.getMaKH());
-            Sum[index][quy] += hd.getTongTien();
+            for(int i=0;i<sizeLabel;i++){
+                if(labels[i].equalsIgnoreCase(hd.getMaKH())){
+                    Sum[i][quy]+=hd.getTongTien();
+                }
+            }
         }
     }
      String title = switch (Loai) {
@@ -616,13 +644,5 @@ public class QuanLyBanHang {
     }
 
     System.out.println("════════════════════════════════════════════════════════════════════════════════════");
-}
-    private int timViTri(String[] labels, int sizeLabel, String key) {
-    for (int i = 0; i < sizeLabel; i++) {
-        if (labels[i].equalsIgnoreCase(key)) {
-            return i;
-        }
-    }
-    return -1;
 }
 }

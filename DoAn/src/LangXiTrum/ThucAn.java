@@ -37,27 +37,21 @@ public class ThucAn extends SanPham{
     }
     
     //nhap
+    @Override
     public void nhap(){
-        System.out.print("nhap ma loai: ");
-        this.maLoai=sc.nextLine();
-        System.out.print("nhap ten san pham: ");
-        this.tenSP=sc.nextLine();
-        System.out.print("Nhap so luong:");
-        this.soLuong=sc.nextInt();
-        sc.nextLine();
-        System.out.print("nhap don gia: ");
-        this.donGia=sc.nextDouble();
-        sc.nextLine();
-        System.out.print("nhap don vi tinh: ");
-        this.dvt=sc.nextLine();
+        super.nhap();
         System.out.print("ban muon san pham co do gion nhu the nao: ");
         this.doGion=sc.nextLine();
         System.out.print("Ban muon gia vi nhu the nao: ");
         this.giaVi=sc.nextLine();
     }
+    public void xuat() {
+    super.xuat();
+        System.out.printf(" %-10s | %-10s |\n", doGion, giaVi);
+}
     @Override
     public String toString() {
-    return String.format("| %-8s | %-25s | %10.0f | %-8s | %8d | %-8s | %-10s | %-10s |",
+        return String.format("| %-8s | %-25s | %10.0f | %-8s | %8d | %-8s | %-10s | %-10s |",
             maSP, tenSP, donGia, dvt, soLuong, maLoai, doGion, giaVi);
 }
 }

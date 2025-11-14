@@ -50,7 +50,7 @@ public class DanhSachPhieuNhap {
         dsPN[dsPN.length-1] = pn;
     }
     public void sua(String maPN) {
-    for (PhieuNhap phieuNhap : dsPN) {
+      for (PhieuNhap phieuNhap : dsPN) {
         if (phieuNhap.getMaPN().equalsIgnoreCase(maPN)) {
             int choice;
             do {

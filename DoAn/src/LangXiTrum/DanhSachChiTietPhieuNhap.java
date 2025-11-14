@@ -23,7 +23,7 @@ public class DanhSachChiTietPhieuNhap  {
     }
     public void nhap(int n) {
     dsCTPN = new ChiTietPhieuNhap[n];
-    for (int i = 0; i < n; i++) {
+      for (int i = 0; i < n; i++) {
         dsCTPN[i] = new ChiTietPhieuNhap();
     }
 }
